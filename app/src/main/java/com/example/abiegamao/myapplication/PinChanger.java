@@ -38,6 +38,7 @@ public class PinChanger extends ActionBarActivity {
     public void clickEvent(View v){
 
         SharedPreferences s = getSharedPreferences(pinPref, Context.MODE_PRIVATE);
+        
 
     }
 }
