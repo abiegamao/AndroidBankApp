@@ -22,6 +22,7 @@ public class MainActivity extends ActionBarActivity {
     //STORED PREFERENCES
     public static final String pinPref = "pinPref";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,28 +47,27 @@ public class MainActivity extends ActionBarActivity {
 
     public void clickEvent(View v){
         int[] p = new int[4];
+        SharedPreferences sharedPref;
+        sharedPref = getSharedPreferences(pinPref, Context.MODE_PRIVATE);
 
-        SharedPreferences defpref = getSharedPreferences(pinPref, Context.MODE_PRIVATE);
 
         //DEFAULT CODE : 0000
         for(int i=0;i<4;i++){
             str = "pin" + i+1;
-            p[i] = defpref.getInt(str,0);
+            p[i] = sharedPref.getInt(str,0);
         }
 
         if (p[0]== np[0].getValue() && p[1]== np[1].getValue() && p[2]== np[2].getValue() && p[3]== np[3].getValue()) {
-            Toast.makeText(this, "Right.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
             Intent goToHome = new Intent(this, HomeScreen.class);
             startActivity(goToHome);
             finish();
 
         }
         else{
-            Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Incorrect PIN", Toast.LENGTH_SHORT).show();
 
         }
-
-
 
     }
 
