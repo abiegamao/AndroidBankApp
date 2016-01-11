@@ -21,14 +21,17 @@ public class HomeScreen extends AppCompatActivity{
             case R.id.btnchangepin:
                 Intent goToPinChanger = new Intent(this, PinChanger.class);
                 startActivity(goToPinChanger);
+                break;
 
             case R.id.btndeposit:
                 Intent goToDeposit = new Intent(this, Deposit.class);
                 startActivity(goToDeposit);
+                break;
 
             case R.id.btnwithdraw:
                 Intent goToWithDraw= new Intent(this, Withdraw.class);
                 startActivity(goToWithDraw);
+                break;
 
 
         }
