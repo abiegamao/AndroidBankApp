@@ -1,6 +1,7 @@
 package com.example.abiegamao.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -51,6 +52,9 @@ public class MainActivity extends ActionBarActivity {
 
         if (p[0]== np[0].getValue() && p[1]== np[1].getValue() && p[2]== np[2].getValue() && p[3]== np[3].getValue()) {
             Toast.makeText(this, "Right.", Toast.LENGTH_SHORT).show();
+            Intent goToHome = new Intent(this, HomeScreen.class);
+            startActivity(goToHome);
+            finish();
 
         }
         else{
