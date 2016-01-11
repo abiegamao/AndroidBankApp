@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
-public class PinChanger extends ActionBarActivity {
+public class PinChanger extends AppCompatActivity {
     NumberPicker[] np = new NumberPicker[8];
 
     public static final String pinPref = "pinPref";
@@ -61,7 +62,7 @@ public class PinChanger extends ActionBarActivity {
         p[1] = sharedPref.getInt("pin2",0);
         p[2] = sharedPref.getInt("pin3",0);
         p[3] = sharedPref.getInt("pin4",0);
-        Toast.makeText(this ,String.valueOf(sharedPref.getInt("pin1",0)) + String.valueOf(sharedPref.getInt("pin2",0)) + String.valueOf(sharedPref.getInt("pin3",0)) + String.valueOf(sharedPref.getInt("pin4",0)), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this ,String.valueOf(sharedPref.getInt("pin1",0)) + String.valueOf(sharedPref.getInt("pin2",0)) + String.valueOf(sharedPref.getInt("pin3",0)) + String.valueOf(sharedPref.getInt("pin4",0)), Toast.LENGTH_SHORT).show();
 
         //check from savedPref
         if (p[0]== np[0].getValue() && p[1]== np[1].getValue() && p[2]== np[2].getValue() && p[3]== np[3].getValue()) {
@@ -101,7 +102,7 @@ public class PinChanger extends ActionBarActivity {
             editor.putInt("pin4", np[7].getValue());
             editor.apply();
 
-            Toast.makeText(this ,String.valueOf(np[4].getValue()) + String.valueOf(np[5].getValue())+ String.valueOf(np[6].getValue())+ String.valueOf(np[7].getValue()), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this ,String.valueOf(np[4].getValue()) + String.valueOf(np[5].getValue())+ String.valueOf(np[6].getValue())+ String.valueOf(np[7].getValue()), Toast.LENGTH_SHORT).show();
             Toast.makeText(this, "PIN SUCCESSFULLY CHANGED!", Toast.LENGTH_SHORT).show();
             finish();
         }
