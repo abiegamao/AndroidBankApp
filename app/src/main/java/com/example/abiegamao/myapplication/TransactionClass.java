@@ -70,7 +70,7 @@ public class TransactionClass {
     public static void main(String args[]){
 
         //SAMPLE DATA
-        TransactionClass trans1 = new TransactionClass("1/16/16",0,400.40); // DATE , TYPE , AMOUNT
+        TransactionClass trans1 = new TransactionClass("1/16/16", 1 ,400.40); // DATE , TYPE , AMOUNT
         trans1.printTrans();
 
 
