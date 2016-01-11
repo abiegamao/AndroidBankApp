@@ -1,6 +1,8 @@
 package com.example.abiegamao.myapplication;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,6 +30,40 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
     }
+
+    public void insertTransaction(TransactionClass trans){
+
+        db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_AMOUNT, trans.getAmount());
+        values.put(COLUMN_DATE, trans.getDate());
+        values.put(COLUMN_TRANSTYPE, trans.getTransactionType());
+
+        db.insert(TABLE_NAME, null, values);
+        db.close();
+
+
+    }
+
+   /* public String searchIt(String name){
+        db = this.getReadableDatabase();
+        String query = "Select amount,date, from " + TABLE_NAME;
+        Cursor cursor = db.rawQuery(query, null);
+        String a,b;
+
+        if(cursor.moveToFirst()){
+            do{
+                a=cursor.getString(0);
+                b=cursor.getString(1);
+                if(a.equals(p))
+
+            }
+            while(cursor.moveToNext());
+        }
+
+    }*/
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE);

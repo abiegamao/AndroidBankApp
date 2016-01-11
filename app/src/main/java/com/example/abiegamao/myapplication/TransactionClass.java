@@ -23,6 +23,8 @@ public class TransactionClass {
         this.transactionType = transType;
     }
 
+
+
     //GETTERS
     public String getDate(){
         return this.date;
