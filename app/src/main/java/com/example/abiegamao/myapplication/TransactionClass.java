@@ -16,7 +16,8 @@ public class TransactionClass {
         this.transactionType=0;
 
     }
-    public TransactionClass(String date,double amount,int transType){
+    //with constructors
+    public TransactionClass(String date,int transType,double amount){
         this.date = date;
         this.amount = amount;
         this.transactionType = transType;
@@ -60,7 +61,11 @@ public class TransactionClass {
         }
     }
 
+    public static void main(String args[]){
 
+        //SAMPLE DATA
+        TransactionClass trans1 = new TransactionClass("1/16/16",0,400.40) // DATE , TYPE , AMOUNT
+    }
 
 
 }
