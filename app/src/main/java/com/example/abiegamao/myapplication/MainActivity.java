@@ -3,11 +3,16 @@ package com.example.abiegamao.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.Toast;
+
+import java.lang.reflect.Field;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -64,8 +69,7 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-
-
-
     }
+
+
 }
