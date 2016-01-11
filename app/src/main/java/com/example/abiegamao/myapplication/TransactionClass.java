@@ -9,8 +9,8 @@ public class TransactionClass {
 
     //default
     public TransactionClass(){
-        //0 - Deposit
-        //1 - Withdraw
+        //1 - Deposit
+        //2 - Withdraw
         this.date="";
         this.amount=0.0;
         this.transactionType=0;
@@ -50,10 +50,10 @@ public class TransactionClass {
     }
 
     public String printTransactionType(int transType){
-        if (transType==0){
+        if (transType==1){
             return "Deposit";
         }
-        else if (transType==1){
+        else if (transType==2){
             return "Withdraw";
         }
         else {
@@ -61,10 +61,19 @@ public class TransactionClass {
         }
     }
 
+    public void printTrans(){
+
+        System.out.printf("Date: %s, Amount: %.2f Type: %s", this.date, this.amount, printTransactionType(this.transactionType));
+
+    }
+
     public static void main(String args[]){
 
         //SAMPLE DATA
-        TransactionClass trans1 = new TransactionClass("1/16/16",0,400.40) // DATE , TYPE , AMOUNT
+        TransactionClass trans1 = new TransactionClass("1/16/16",0,400.40); // DATE , TYPE , AMOUNT
+        trans1.printTrans();
+
+
     }
 
 
