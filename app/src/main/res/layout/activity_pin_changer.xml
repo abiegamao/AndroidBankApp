@@ -1,10 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#2b2a2a"
+    android:orientation="vertical"
     tools:context="com.example.abiegamao.myapplication.PinChanger">
 
-</RelativeLayout>
+
+    <LinearLayout
+    android:orientation="horizontal"
+    android:background="#2b2a2a"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:onClick="clickEvent"
+    android:layout_gravity="center"
+    android:paddingTop="30dp"
+    >
+
+    <NumberPicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:id="@+id/numberpicker1"
+        />
+    <NumberPicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberpicker2"
+        />
+    <NumberPicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberpicker3" />
+    <NumberPicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberpicker4"
+        />
+
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:background="#2b2a2a"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:onClick="clickEvent"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberpicker5" />
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberpicker6" />
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberpicker7" />
+        <NumberPicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberpicker8" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
