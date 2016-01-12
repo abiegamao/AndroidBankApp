@@ -29,6 +29,7 @@ public class Deposit extends AppCompatActivity {
         newTrans.setDate(dateFormat.format(date));
         newTrans.setTransactionType(0);
         helper.insertTransaction(newTrans);*/
+        //
 
     }
 
