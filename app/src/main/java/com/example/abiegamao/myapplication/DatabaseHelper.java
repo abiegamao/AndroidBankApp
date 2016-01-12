@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     //COLUMNS
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_DATE = "date";
-    public static final String COLUMN_TRANSTYPE = "transType";
+    public static final String COLUMN_TRANSTYPE = "transtype";
     public static final String COLUMN_AMOUNT = "amount";
     SQLiteDatabase db;
     public static final String TABLE_CREATE = "create table transactions(id integer primary key not null auto_increment , " +
@@ -68,8 +68,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE);
         this.db = db;
-
-
     }
 
     @Override
@@ -77,6 +75,5 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         String query = "DROP TABLE IF EXISTS" + TABLE_NAME;
         db.execSQL(query);
         this.onCreate(db);
-
     }
 }
