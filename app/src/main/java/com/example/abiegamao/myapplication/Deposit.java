@@ -24,11 +24,11 @@ public class Deposit extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         Date date = new Date();
         //System.out.println(); //2014/08/06 15:59:48
-
+/*
         newTrans.setAmount(Float.valueOf(editAmount.getText().toString()));
         newTrans.setDate(dateFormat.format(date));
         newTrans.setTransactionType(0);
-        helper.insertTransaction(newTrans);
+        helper.insertTransaction(newTrans);*/
 
     }
 
