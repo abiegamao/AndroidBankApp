@@ -18,7 +18,8 @@
         <activity android:name=".HomeScreen" />
         <activity android:name=".PinChanger" />
         <activity android:name=".Deposit" />
-        <activity android:name=".Withdraw"></activity>
+        <activity android:name=".Withdraw" />
+        <activity android:name=".TransactionHistory"></activity>
     </application>
 
 </manifest>
