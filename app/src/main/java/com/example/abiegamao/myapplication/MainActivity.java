@@ -33,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
         txt = (TextView) findViewById(R.id.textViewMain);
 
         Typeface gotham = Typeface.createFromAsset(getAssets(), "fonts/Gotham-Book-Regular.ttf");
-        txt.setTypeface(gotham);
+        Typeface funsized = Typeface.createFromAsset(getAssets(), "fonts/FunSized.ttf");
+        txt.setTypeface(funsized);
+        txt.setTextSize(25);
+        txt.setText("Enter your PIN ");
 
         sharedPref = getSharedPreferences(pinPref, Context.MODE_PRIVATE);
 
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             //str = "R.id.numberpicker" + (i+1);
             np[i].setMinValue(0);
             np[i].setMaxValue(9);
+
 
 
         }
