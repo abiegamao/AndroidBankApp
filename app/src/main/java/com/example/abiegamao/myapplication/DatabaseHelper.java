@@ -3,6 +3,7 @@ package com.example.abiegamao.myapplication;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -21,8 +22,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String COLUMN_TRANSTYPE = "transtype";
     public static final String COLUMN_AMOUNT = "amount";
     SQLiteDatabase db;
-    public static final String TABLE_CREATE = "create table transactions(id integer primary key not null auto_increment , " +
-            "date text not null amount double not null transtype integer not null);";
+    public static final String TABLE_CREATE = "create table transactions(id integer primary key, " +
+            "date text,amount double,transtype integer);";
 
 
 
@@ -31,19 +32,35 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     }
 
-    public void insertTransaction(TransactionClass trans){
+    public boolean insertTransaction(TransactionClass trans){
 
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_AMOUNT, trans.getAmount());
         values.put(COLUMN_DATE, trans.getDate());
         values.put(COLUMN_TRANSTYPE, trans.getTransactionType());
-
         db.insert(TABLE_NAME, null, values);
         db.close();
 
-
+        return true;
     }
+
+    public Cursor getData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from transactions", null );
+        return res;
+    }
+    public Cursor getTotal(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery("select (select sum(amount) from transactions where transtype = 1) - (select sum(amount) from transactions where transtype = 2)", null );
+        return res;
+    }
+    public int numberOfRows(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, "person");
+        return numRows;
+    }
+
 
    /* public String searchIt(String name){
         db = this.getReadableDatabase();

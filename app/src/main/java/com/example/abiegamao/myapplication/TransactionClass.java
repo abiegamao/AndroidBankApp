@@ -2,7 +2,7 @@ package com.example.abiegamao.myapplication;
 
 
 public class TransactionClass {
-
+    private int id;
     private String date;
     private double amount;
     private int transactionType;
@@ -11,23 +11,27 @@ public class TransactionClass {
     public TransactionClass(){
         //1 - Deposit
         //2 - Withdraw
+        this.id = 0;
         this.date="";
         this.amount=0.0;
         this.transactionType=0;
 
     }
     //with constructors
-    public TransactionClass(String date,int transType,double amount){
+    public TransactionClass(int i,String date,int transType,double amount){
+        this.id = i;
         this.date = date;
         this.amount = amount;
         this.transactionType = transType;
     }
 
-
-
     //GETTERS
     public String getDate(){
         return this.date;
+    }
+
+    public int getID(){
+        return this.id;
     }
 
     public double getAmount(){
@@ -68,15 +72,4 @@ public class TransactionClass {
         System.out.printf("Date: %s, Amount: %.2f Type: %s", this.date, this.amount, printTransactionType(this.transactionType));
 
     }
-
-    public static void main(String args[]){
-
-        //SAMPLE DATA
-        TransactionClass trans1 = new TransactionClass("1/16/16", 1 ,400.40); // DATE , TYPE , AMOUNT
-        trans1.printTrans();
-
-
-    }
-
-
 }

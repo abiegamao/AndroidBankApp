@@ -15,6 +15,7 @@
         android:paddingTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:onClick="clickDeposit"
         android:layout_gravity="center_horizontal">
         <TextView
             android:layout_width="match_parent"
