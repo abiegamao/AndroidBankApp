@@ -26,13 +26,12 @@ public class Deposit extends AppCompatActivity {
         curr = (EditText) findViewById(R.id.editTextCurrBalanceDeposit);
         curr.setEnabled(false);
 
-        try {
-            Cursor c = helper.getTotal();
-            c.moveToLast();
-               aler(String.valueOf(c.getDouble(0)));
-        }catch (Exception e){
-            aler(e.getMessage());
-        }
+            Cursor w = helper.getTotalW();
+            w.moveToFirst();
+            Cursor d = helper.getTotalD();
+            d.moveToFirst();
+            curr.setText(String.valueOf(d.getDouble(0) - w.getDouble(0)));
+
 
         //System.out.println(); //2014/08/06 15:59:48
 
@@ -53,13 +52,12 @@ public class Deposit extends AppCompatActivity {
 
         editAmount.setText("0.0");
 
-        try {
-            Cursor c = helper.getTotal();
-            c.moveToFirst();
-            curr.setText(String.valueOf(c.getInt(0)));
-        }catch (Exception e){
-            aler(e.getMessage());
-        }
+        Cursor w = helper.getTotalW();
+        w.moveToFirst();
+        Cursor d = helper.getTotalD();
+        d.moveToFirst();
+        curr.setText(String.valueOf(d.getDouble(0)-w.getDouble(0)));
+
     }
     public void aler(String s){
         AlertDialog alertDialog = new AlertDialog.Builder(Deposit.this).create();

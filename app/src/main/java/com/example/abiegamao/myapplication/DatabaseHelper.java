@@ -50,9 +50,16 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         Cursor res =  db.rawQuery( "select * from transactions", null );
         return res;
     }
-    public Cursor getTotal(){
+    public Cursor getTotalD(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery("select (select sum(amount) from transactions where transtype = 1) - (select sum(amount) from transactions where transtype = 2)", null );
+        //Cursor res =  db.rawQuery("select (select sum(amount) from transactions where transtype = 1) - (select sum(amount) from transactions where transtype = 2)", null );
+        Cursor res =  db.rawQuery("select sum(amount) from transactions where transtype = 1", null );
+        return res;
+    }
+    public Cursor getTotalW(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        //Cursor res =  db.rawQuery("select (select sum(amount) from transactions where transtype = 1) - (select sum(amount) from transactions where transtype = 2)", null );
+        Cursor res =  db.rawQuery("select sum(amount) from transactions where transtype = 2", null );
         return res;
     }
     public int numberOfRows(){
