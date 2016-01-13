@@ -12,6 +12,8 @@ public class HomeScreen extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+
+
     }
 
     public void clickEvent(View v){
@@ -31,6 +33,11 @@ public class HomeScreen extends AppCompatActivity{
             case R.id.btnwithdraw:
                 Intent goToWithDraw= new Intent(this, Withdraw.class);
                 startActivity(goToWithDraw);
+                break;
+
+            case R.id.btninquire:
+                Intent goToTrans = new Intent(this, TransactionHistory.class);
+                startActivity(goToTrans);
                 break;
 
 

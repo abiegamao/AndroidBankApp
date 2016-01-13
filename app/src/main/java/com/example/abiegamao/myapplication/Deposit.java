@@ -26,18 +26,9 @@ public class Deposit extends AppCompatActivity {
         curr = (EditText) findViewById(R.id.editTextCurrBalanceDeposit);
         curr.setEnabled(false);
 
-            Cursor w = helper.getTotalW();
-            w.moveToFirst();
-            Cursor d = helper.getTotalD();
-            d.moveToFirst();
-            curr.setText(String.valueOf(d.getDouble(0) - w.getDouble(0)));
-
-
-        //System.out.println(); //2014/08/06 15:59:48
-
-
-
-
+        //GET CURRENT BALANCE DEP-WITHDRAW
+        getCurrBal();
+        
     }
     public void clickDeposit(View v){
         TransactionClass newTrans = new TransactionClass();
@@ -48,19 +39,14 @@ public class Deposit extends AppCompatActivity {
         newTrans.setDate(dateFormat.format(date));
         newTrans.setTransactionType(1);
         if(helper.insertTransaction(newTrans))
-            aler("Success");
+            alert("Success");
 
         editAmount.setText("0.0");
-
-        Cursor w = helper.getTotalW();
-        w.moveToFirst();
-        Cursor d = helper.getTotalD();
-        d.moveToFirst();
-        curr.setText(String.valueOf(d.getDouble(0)-w.getDouble(0)));
+        getCurrBal();
 
     }
-    public void aler(String s){
-        AlertDialog alertDialog = new AlertDialog.Builder(Deposit.this).create();
+    public void alert(String s){
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setTitle("Alert");
         alertDialog.setMessage(s);
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
@@ -70,6 +56,14 @@ public class Deposit extends AppCompatActivity {
                     }
                 });
         alertDialog.show();
+    }
+
+    public void getCurrBal(){
+        Cursor d = helper.getTotalD();
+        Cursor w = helper.getTotalW();
+        d.moveToFirst();
+        w.moveToFirst();
+        curr.setText(String.valueOf(d.getDouble(0) - w.getDouble(0)));
     }
 
 }

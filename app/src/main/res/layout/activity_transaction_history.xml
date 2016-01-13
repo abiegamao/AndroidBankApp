@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.example.abiegamao.myapplication.TransactionHistory">
 
     <TextView
@@ -15,4 +16,28 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Current Balance:"
         android:id="@+id/textView" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/editTextCurrBalTH"
+            android:layout_weight="1"
+            android:text="0.0"
+            android:textAlignment="viewEnd" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/listView"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_weight="1" />
+    </LinearLayout>
+
 </LinearLayout>
