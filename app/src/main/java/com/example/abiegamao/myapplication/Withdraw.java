@@ -3,11 +3,13 @@ package com.example.abiegamao.myapplication;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -17,6 +19,7 @@ public class Withdraw extends AppCompatActivity {
 
     DatabaseHelper helper;
     EditText curr,editAmount;
+    TextView currBaltxt, amtBaltxt;
 
 
     @Override
@@ -25,10 +28,22 @@ public class Withdraw extends AppCompatActivity {
         setContentView(R.layout.activity_withdraw);
         editAmount = (EditText)findViewById(R.id.editTextAmountToWithDraw);
         curr = (EditText)findViewById(R.id.editTextCurrBalanceWithdraw);
+        currBaltxt = (TextView) findViewById(R.id.strCurrBalWithdraw);
+        amtBaltxt = (TextView) findViewById(R.id.strAmountToWithdraw);
         curr.setEnabled(false);
 
         helper = new DatabaseHelper(this);
         getCurrBal();
+
+        //STR
+        Typeface gotham = Typeface.createFromAsset(getAssets(), "fonts/Gotham-Book-Regular.ttf");
+        Typeface funsized = Typeface.createFromAsset(getAssets(), "fonts/FunSized.ttf");
+        editAmount.setTypeface(gotham);
+        curr.setTypeface(gotham);
+        currBaltxt.setTypeface(funsized);
+        amtBaltxt.setTypeface(funsized);
+        currBaltxt.setTextSize(25);
+        amtBaltxt.setTextSize(23);
     }
 
     public void clickWithdraw(View v){

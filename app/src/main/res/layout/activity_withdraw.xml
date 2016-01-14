@@ -21,7 +21,7 @@
             android:textSize="40dp"
             android:layout_height="wrap_content"
             android:text="Current Balance:"
-            android:id="@+id/strbalance" />
+            android:id="@+id/strCurrBalWithdraw" />
 
         <EditText
             android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Amount to Withdraw:"
             android:textSize="37dp"
-            android:id="@+id/strwithdraw" />
+            android:id="@+id/strAmountToWithdraw" />
 
         <EditText
             android:layout_width="match_parent"

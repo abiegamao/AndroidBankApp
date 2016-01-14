@@ -22,7 +22,7 @@
             android:textSize="40dp"
             android:layout_height="wrap_content"
             android:text="Current Balance:"
-            android:id="@+id/strbalanceWithDraw" />
+            android:id="@+id/strCurrBalDeposit" />
 
         <EditText
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="Amount to Deposit:"
             android:textSize="37dp"
-            android:id="@+id/strdeposit" />
+            android:id="@+id/strAmountToDeposit" />
 
         <EditText
             android:layout_width="match_parent"
