@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         Typeface gotham = Typeface.createFromAsset(getAssets(), "fonts/Gotham-Book-Regular.ttf");
         Typeface funsized = Typeface.createFromAsset(getAssets(), "fonts/FunSized.ttf");
-        txt.setTypeface(funsized);
-        txt.setTextSize(25);
-        txt.setText("Enter your PIN ");
+        Typeface comix = Typeface.createFromAsset(getAssets(), "fonts/Comix-Loud.ttf");
+        Typeface fishFingers = Typeface.createFromAsset(getAssets(), "fonts/Fishfingers.ttf");
+        txt.setTypeface(comix);
+        txt.setTextSize(18);
+        txt.setText("ENTER YOUR PIN");
 
         sharedPref = getSharedPreferences(pinPref, Context.MODE_PRIVATE);
 
