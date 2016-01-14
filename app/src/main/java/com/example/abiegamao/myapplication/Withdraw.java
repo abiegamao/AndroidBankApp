@@ -38,12 +38,16 @@ public class Withdraw extends AppCompatActivity {
         //STR
         Typeface gotham = Typeface.createFromAsset(getAssets(), "fonts/Gotham-Book-Regular.ttf");
         Typeface funsized = Typeface.createFromAsset(getAssets(), "fonts/FunSized.ttf");
-        editAmount.setTypeface(gotham);
-        curr.setTypeface(gotham);
-        currBaltxt.setTypeface(funsized);
-        amtBaltxt.setTypeface(funsized);
-        currBaltxt.setTextSize(25);
-        amtBaltxt.setTextSize(23);
+        Typeface comix = Typeface.createFromAsset(getAssets(), "fonts/Comix-Loud.ttf");
+        Typeface fishFingers = Typeface.createFromAsset(getAssets(), "fonts/Fishfingers.ttf");
+        editAmount.setTypeface(fishFingers);
+        curr.setTypeface(fishFingers);
+        currBaltxt.setTypeface(comix);
+        amtBaltxt.setTypeface(comix);
+        currBaltxt.setTextSize(15);
+        amtBaltxt.setTextSize(13);
+        editAmount.setTextSize(25);
+        curr.setTextSize(25);
     }
 
     public void clickWithdraw(View v){

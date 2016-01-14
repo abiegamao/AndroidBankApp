@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
             np[i].setMaxValue(9);
 
 
-
         }
 
 

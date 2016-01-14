@@ -7,6 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="90px"
+    android:layout_marginRight="90px"
+    android:background="@drawable/bowtie3"
     tools:context="com.example.abiegamao.myapplication.Withdraw">
 
     <LinearLayout
@@ -20,7 +23,7 @@
             android:layout_width="match_parent"
             android:textSize="40dp"
             android:layout_height="wrap_content"
-            android:text="Current Balance:"
+            android:text="CURRENT BALANCE:"
             android:id="@+id/strCurrBalWithdraw" />
 
         <EditText
@@ -34,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Amount to Withdraw:"
+            android:text="AMOUNT TO WITHDRAW:"
             android:textSize="37dp"
             android:id="@+id/strAmountToWithdraw" />
 
