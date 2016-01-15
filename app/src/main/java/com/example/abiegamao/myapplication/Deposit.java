@@ -19,6 +19,8 @@ public class Deposit extends AppCompatActivity {
     EditText editAmount;
     TextView currBaltxt, amtBaltxt;
     DatabaseHelper helper;
+    double bal;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,11 @@ public class Deposit extends AppCompatActivity {
         newTrans.setAmount(Float.valueOf(editAmount.getText().toString()));
         newTrans.setDate(dateFormat.format(date));
         newTrans.setTransactionType(1);
+        bal = newTrans.getAmount();
+        if(bal <= 0) {
+            alert("Cannot deposit such amount");
+            return;
+        }
         if(helper.insertTransaction(newTrans))
             alert("Success");
 

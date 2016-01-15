@@ -20,6 +20,7 @@ public class Withdraw extends AppCompatActivity {
     DatabaseHelper helper;
     EditText curr,editAmount;
     TextView currBaltxt, amtBaltxt;
+    Double bal;
 
 
     @Override
@@ -60,7 +61,10 @@ public class Withdraw extends AppCompatActivity {
         trans.setDate(dateFormat.format(date));
 
 
-
+        if(Float.valueOf(editAmount.getText().toString())<=0){
+            alert("Cannot Withdraw such Amount.");
+            return;
+        }
         if(helper.insertTransaction(trans))
             alert("Success");
             editAmount.setText("0.0");
@@ -85,7 +89,9 @@ public class Withdraw extends AppCompatActivity {
         Cursor w = helper.getTotalW();
         d.moveToFirst();
         w.moveToFirst();
-        curr.setText(String.valueOf(d.getDouble(0) - w.getDouble(0)));
+        bal = d.getDouble(0) - w.getDouble(0);
+
+        curr.setText(String.valueOf(bal));
     }
 }
 
