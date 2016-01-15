@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class TransactionHistory extends AppCompatActivity {
     EditText curr;
     EditText editAmount;
-    TextView strCurrBal,strTH;
+    TextView strCurrBal,strTH,strx;
     ListView li;
     DatabaseHelper helper;
     TransactionClass[] t;
@@ -31,6 +31,7 @@ public class TransactionHistory extends AppCompatActivity {
 
         helper = new DatabaseHelper(this);
         strCurrBal=(TextView) findViewById(R.id.textViewCurrBalanceTH);
+       // strx = (TextView) findViewById(R.id.label);
         curr = (EditText) findViewById(R.id.editTextCurrBalTH);
         strTH = (TextView) findViewById(R.id.textViewTH);
         curr.setEnabled(false);
@@ -46,6 +47,8 @@ public class TransactionHistory extends AppCompatActivity {
 
         strTH.setTypeface(comix);
         curr.setTextSize(25);
+       // strList.setTypeface(fishFingers);
+        //strx.setTextSize(14);
         strCurrBal.setTextSize(15);
         strTH.setTextSize(12);
 
