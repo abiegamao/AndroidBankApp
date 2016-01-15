@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class TransactionHistory extends AppCompatActivity {
     EditText curr;
-    TextView strCurrBal;
+    TextView strCurrBal,strTH;
     DatabaseHelper helper;
 
     @Override
@@ -20,6 +20,7 @@ public class TransactionHistory extends AppCompatActivity {
         helper = new DatabaseHelper(this);
         strCurrBal=(TextView) findViewById(R.id.textViewCurrBalanceTH);
         curr = (EditText) findViewById(R.id.editTextCurrBalTH);
+        strTH = (TextView) findViewById(R.id.textViewTH);
         curr.setEnabled(false);
 
         //STR
@@ -30,8 +31,11 @@ public class TransactionHistory extends AppCompatActivity {
 
         curr.setTypeface(fishFingers);
         strCurrBal.setTypeface(comix);
+        strTH.setTypeface(comix);
         curr.setTextSize(25);
         strCurrBal.setTextSize(15);
+        strTH.setTextSize(12);
+
         strCurrBal.setText("CURRENT BALANCE: ");
 
 
