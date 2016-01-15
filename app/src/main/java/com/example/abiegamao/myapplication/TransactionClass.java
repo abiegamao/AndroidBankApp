@@ -67,9 +67,9 @@ public class TransactionClass {
         }
     }
 
-    public void printTrans(){
+    public String printTrans(){
 
-        System.out.printf("Date: %s, Amount: %.2f Type: %s", this.date, this.amount, printTransactionType(this.transactionType));
+        return this.date +" \t "+ printTransactionType(this.transactionType) +" \t "+ this.amount;
 
     }
 }
